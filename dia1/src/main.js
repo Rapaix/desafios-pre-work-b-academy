@@ -1,3 +1,4 @@
+import './style.css'
 
 const app = document.querySelector('[data-js="app"]')
 const link = document.querySelector('[data-js="link"]')
@@ -9,11 +10,16 @@ app.innerHTML = `
 `
 link.addEventListener('click', (event) => {
 
-  event.preventDefault()
-  if (app.style.visibility !== 'hidden') {
-    app.style.visibility = "hidden"
-  } else {
-    app.style.visibility = "visible"
+  const visibility = {
+    '': 'hidden',
+    hidden: 'visible',
+    visible: 'hidden'
+
   }
+
+  event.preventDefault()
+  app.style.visibility = visibility[app.style.visibility]
+
+
 
 }, false)
