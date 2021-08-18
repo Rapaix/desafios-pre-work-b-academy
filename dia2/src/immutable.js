@@ -5,10 +5,15 @@ const john = {
   hobbies: ['Surf', 'Design'],
 }
 
-const jane = john
+// hobbies : john.hobbies.concat()
+
+const jane = { ...john,
+                hobbies : [...john.hobbies]
+}
 
 jane.name = 'Jane'
 jane.hobbies.push('MuayThai', 'Programming')
+
 
 console.log('John:', john)
 console.log('Jane:', jane)
